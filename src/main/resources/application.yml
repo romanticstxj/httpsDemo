@@ -1,0 +1,32 @@
+server:
+  port: 8443
+  ssl:
+    key-store: /Users/tengx009/git/springdemo/keystore/mykeys.jks
+    key-store-password: michael
+    key-password: michael
+
+
+amazon:
+  associateId: 20000
+
+#spring:
+#  profiles:
+#    active: development
+
+logging:
+  level:
+    root: INFO
+---
+spring:
+  profiles: development
+logging:
+  level:
+    root: DEBUG
+---
+spring:
+  profiles: production
+logging:
+  path: /Users/tengx009/logs/springdemo/
+  file: BookWorm.log
+  level:
+    root: WARN
